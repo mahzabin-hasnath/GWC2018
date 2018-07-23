@@ -1,3 +1,7 @@
+'''
+Sample solution of a hangman game dealing with a predetermined word.
+'''
+
 correctAnswer = "bananas"
 currentAnswer = ["_", "_", "_", "_", "_", "_", "_"]
 guessedLetters = []
@@ -7,7 +11,7 @@ print("Welcome to Hangman! \n")
 print(currentAnswer)
 
 chances = 6
-j = 0
+fails = 0
 
 while chances > 0:
     userGuess = input("\nGuess a letter. ")
@@ -28,7 +32,7 @@ while chances > 0:
     else:
         chances -= 1
         print("\nA %s is drawn. You have %s tries left.\n" %(bodyParts[j], chances))
-        j += 1
+        fails += 1
         print(currentAnswer)
     
     if "_" not in currentAnswer:
